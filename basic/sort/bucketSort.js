@@ -1,4 +1,7 @@
-const generateArray = require('./utils').generateRandomArray;
+const utils = require('./utils');
+const generateRandomArray = utils.generateRandomArray;
+const maxOfArray = utils.maxOfArray;
+const minOfArray = utils.minOfArray;
 
 function bucketSort(array, bucketNum) {
   const len = array.length;
@@ -6,8 +9,8 @@ function bucketSort(array, bucketNum) {
   if(len <= 1) {
     return array;
   }
-  const min = Math.min.apply(null, array);
-  const max = Math.max.apply(null, array);
+  const min = minOfArray(array);
+  const max = maxOfArray(array);
   if (max === min) {
     return array;
   }
@@ -51,5 +54,6 @@ function bucketSort(array, bucketNum) {
   return output;
 }
 
-const array = generateArray(20);
+const array = generateRandomArray(10);
+
 console.log(bucketSort(array, 10));

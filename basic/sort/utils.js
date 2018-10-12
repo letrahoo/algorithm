@@ -6,5 +6,12 @@ exports.generateRandomArray = function generateRandomArray(length) {
     outputArr.push(randomNum);
   }
   return outputArr;
-}
+};
 
+exports.maxOfArray = function maxOfArray(array) {
+  return Math.max.apply(null, array);
+};
+
+exports.minOfArray = function minOfArray(array) {
+  return Math.min.apply(null, array);
+};
