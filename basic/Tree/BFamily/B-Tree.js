@@ -4,7 +4,7 @@ class TreeNode {
     this.children = [];
     this.keys = [];
     this.isLeaf = null;
-    this.parent = null;
+    // this.parent = null;
   }
 
   find(data) {
@@ -33,10 +33,6 @@ class TreeNode {
       newNode.children = fullChild.children.slice(this.degree);
     }
     this.children.splice(index + 1, 0, newNode);
-    // for (let j = this.keys.length + 1; j >= index + 1; j--) {
-    //   this.children[j + 1] = this.children[j];
-    // }
-    // this.children[index + 1] = newNode;
     this.keys.splice(index, 0, fullChild.keys[this.degree - 1]);
     fullChild.keys.splice(this.degree - 1);
     fullChild.children.splice(this.degree - 1);
@@ -103,13 +99,20 @@ class BTree {
       this.root.nonFullInsert(data);
     }
   }
+
+  delete(data) {
+    
+  }
 }
 
 const btr = new BTree('btr', 3);
-btr.insert(3);
-btr.insert(4);
-btr.insert(2);
-btr.insert(6);
-btr.insert(7);
-btr.insert(8);
+btr.insert('C');
+btr.insert('N');
+btr.insert('G');
+btr.insert('A');
+btr.insert('H');
+// btr.insert(8);
+
 console.log(btr);
+
+// console.log(btr.find(8));
