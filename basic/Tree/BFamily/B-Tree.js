@@ -3,7 +3,7 @@ class TreeNode {
     this.degree = degree;
     this.children = [];
     this.keys = [];
-    this.isLeaf = null;
+    this.isLeaf = false;
     // this.parent = null;
   }
 
@@ -105,13 +105,17 @@ class BTree {
   }
 }
 
-const btr = new BTree('btr', 3);
+const btr = new BTree('btr', 2);
 btr.insert('C');
 btr.insert('N');
 btr.insert('G');
 btr.insert('A');
 btr.insert('H');
-// btr.insert(8);
+btr.insert('Z');
+btr.insert('B');
+btr.insert('X');
+btr.insert('Y');
+btr.insert('P');
 
 console.log(btr);
 
