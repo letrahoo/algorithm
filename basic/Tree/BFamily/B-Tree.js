@@ -116,7 +116,7 @@ btr.insert('B');
 btr.insert('X');
 btr.insert('Y');
 btr.insert('P');
+console.log(btr.find(8));
 
 console.log(btr);
 
-// console.log(btr.find(8));
